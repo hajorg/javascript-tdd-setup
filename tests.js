@@ -31,5 +31,29 @@ describe("Test that constants are computed properly", function() {
       lib.sumOfPrimes(1) == false
     );
   });
-  
+  it("should return 2 if parameter given is 2", function() {
+    assert(
+      lib.sumOfPrimes(2) == 2
+    );
+  });
+  it("should return false if number of parameters given is more than 1", function() {
+    assert(
+      lib.sumOfPrimes(89,5) == false
+    );
+  });
+  it("should return false if given is a negative number", function() {
+    assert(
+      lib.sumOfPrimes(-7) == false
+    );
+  });
+  it("should return 381 if given 56 as your parameter", function() {
+    assert(
+      lib.sumOfPrimes(56) == 381
+    );
+  });
+  it("should return false if given no parameter is given", function() {
+    assert(
+      lib.sumOfPrimes() == false
+    );
+  });
 });

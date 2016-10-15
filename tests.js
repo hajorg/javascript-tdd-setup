@@ -11,12 +11,22 @@ describe("Test that constants are computed properly", function() {
       lib.sumOfPrimes('str') == false
     );
   });
-  it("should give 17 for 10", function() {
+  it("It should return false if parameter given is an array", function() {
+    assert(
+      lib.sumOfPrimes([1,2,3]) == false
+    );
+  });
+  it("It should return false if parameter given is an object", function() {
+    assert(
+      lib.sumOfPrimes({x:9}) == false
+    );
+  });
+  it("should give 17 if 10 is the given input", function() {
     assert(
       lib.sumOfPrimes(10) == 17
     );
   });
-  it("should give 8, 1 for constants 4, 2 as a and n respectively", function() {
+  it("should return a number as the result if given a valid number as an input", function() {
     assert(
       typeof(lib.sumOfPrimes(10)) == 'number'
     );

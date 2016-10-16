@@ -6,19 +6,19 @@ var assert = chai.assert;
 var lib = require('./lib/sum_of_primes.js');
 
 describe("Test that constants are computed properly", function() {
-  it("should return false if 'str' is given", function() {
+  it("should return 'Invalid input. A number was expected but a string was giving.' if 'str' is given", function() {
     assert(
-      lib.sumOfPrimes('str') == false
+      lib.sumOfPrimes('str') == "Invalid input. A number was expected but a string was giving."
     );
   });
-  it("It should return false if parameter given is an array", function() {
+  it("It should return 'Invalid input. A number was expected but an Object was giving.' if parameter given is an array", function() {
     assert(
-      lib.sumOfPrimes([1,2,3]) == false
+      lib.sumOfPrimes([1,2,3]) == "Invalid input. A number was expected but an Object was giving."
     );
   });
-  it("It should return false if parameter given is an object", function() {
+  it("It should return 'Invalid input. A number was expected but an Object was giving.' if parameter given is an object", function() {
     assert(
-      lib.sumOfPrimes({x:9}) == false
+      lib.sumOfPrimes({x:9}) == "Invalid input. A number was expected but an Object was giving."
     );
   });
   it("should give 17 if 10 is the given input", function() {
@@ -31,14 +31,14 @@ describe("Test that constants are computed properly", function() {
       typeof(lib.sumOfPrimes(10)) == 'number'
     );
   });
-  it("should return false if parameter given is 0", function() {
+  it("should return 'Invalid input. Input must be greater than 1' if parameter given is 0", function() {
     assert(
-      lib.sumOfPrimes(0) == false
+      lib.sumOfPrimes(0) == "Invalid input. Input must be greater than 1"
     );
   });
-  it("should return false if parameter given is 1", function() {
+  it("should return 'Invalid input. Input must be greater than 1' if parameter given is 1", function() {
     assert(
-      lib.sumOfPrimes(1) == false
+      lib.sumOfPrimes(1) == "Invalid input. Input must be greater than 1"
     );
   });
   it("should return 2 if parameter given is 2", function() {
@@ -46,14 +46,14 @@ describe("Test that constants are computed properly", function() {
       lib.sumOfPrimes(2) == 2
     );
   });
-  it("should return false if number of parameters given is more than 1", function() {
+  it("should return 'Invalid input. Only one input is required' if number of parameters given is more than 1", function() {
     assert(
-      lib.sumOfPrimes(89,5) == false
+      lib.sumOfPrimes(89,5) == "Invalid input. Only one input is required"
     );
   });
-  it("should return false if given is a negative number", function() {
+  it("should return 'Invalid input. Input must be greater than 1' if given is a negative number", function() {
     assert(
-      lib.sumOfPrimes(-7) == false
+      lib.sumOfPrimes(-7) == "Invalid input. Input must be greater than 1"
     );
   });
   it("should return 381 if given 56 as your parameter", function() {
@@ -61,9 +61,9 @@ describe("Test that constants are computed properly", function() {
       lib.sumOfPrimes(56) == 381
     );
   });
-  it("should return false if given no parameter is given", function() {
+  it("should return 'Invalid input. Only one input is required' if given no parameter is given", function() {
     assert(
-      lib.sumOfPrimes() == false
+      lib.sumOfPrimes() == "Invalid input. Only one input is required"
     );
   });
 });
